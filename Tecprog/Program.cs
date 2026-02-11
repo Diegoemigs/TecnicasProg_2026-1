@@ -13,5 +13,9 @@ Console.WriteLine($"Edad: {edad}");
 
 Persona humano1 = new Persona(nombre, edad); //Instancia un nuevo Objeto tipo persona
 
-Console.WriteLine($"Nombre objeto: {humano1. Nombre}");
-Console.WriteLine($"Edad objeto: {humano1. Edad }");
+//Console.WriteLine($"Nombre objeto: {humano1. Nombre}");
+//Console.WriteLine($"Edad objeto: {humano1. Edad }");
+
+
+humano1.MostrarDatos();
+        Persona humano2 = new Persona("Diego", 22);
