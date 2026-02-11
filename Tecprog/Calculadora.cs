@@ -1,15 +1,13 @@
 ﻿//Programa Principal
-Calculadora calculadora = new Calculadora(5, 2);
+Calculadora calculadora = new Calculadora();
 float resultado = calculadora.Division();
 
+Console.WriteLine(resultado);
 
 //Clases
 
 
 //Calculadora Basica
-
-
-using System.Security.Cryptography.X509Certificates;
 
 public class Calculadora 
 { 
