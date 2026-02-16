@@ -32,11 +32,22 @@ Console.WriteLine("El resultado de la suma 2 es: " + calculadora.Suma(3));
 Calculadora calculadora3 = calculadora + calculadora2;
 Console.WriteLine($"Calculadora 3 ({calculadora3.Numero}, {calculadora3.Numero2})");*/
 
+using System;
+
 Console.WriteLine("Ingresa el primer numero:");
-int Numero
+int Numero = int.Parse(Console.ReadLine() ?? "");
+int Numero2 = int.Parse(Console.ReadLine() ?? "");
+
+Console.WriteLine("1.- Suma");
+Console.WriteLine("2.- Resta");
+Console.WriteLine("3.- Multiplicación");
+Console.WriteLine("4.- División");
+
+int Numero = int.Parse(Console.ReadLine() ?? "");
+int Numero2 = int.Parse(Console.ReadLine() ?? "");
 switch () 
 { 
-    case 0;
+    case 1;
         break;
 }
 //Calculadora Basica
