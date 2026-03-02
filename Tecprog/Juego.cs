@@ -6,13 +6,61 @@ try
     Console.WriteLine("Ingresa el nombre de tu Guerrero");
     string nombre = Console.ReadLine() ?? "";
 
+    Guerrero jugador = SeleccionarClase(nombre);
+    Guerrero enemigo = GenerarEnemigo();
+
+    Console.WriteLine($"Te enfrentaras a {enemigo.Nombre}");
+
+    while (enemigo.Vida > 0 && jugador.Vida > 0) {
+        MostrarEstado(jugador, enemigo);
+        string opcion = ObtenerOpcion();
+
+        switch (opcion) {
+            case "1":
+                jugador.Atacar(enemigo);
+                break;
+            case "2":
+                Console.WriteLine($"{jugador.Nombre} se defiende y el daño se reduce");
+                enemigo.Atacar(jugador);
+                jugador.RecibirDanio(jugador.Ataque / 2);
+                break;
+            case "3":
+                Console.WriteLine("Intentando la fusión");
+
+                if (new Random().Next(1,100) >50) {
+                    jugador = jugador + enemigo;
+                    Console.WriteLine($"Tu nuevo nombre es {jugador.Nombre} | {jugador.Vida} | {jugador.Ataque}");
+                } else {
+                    Console.WriteLine("La fusión falló y perdiste vida");
+                    jugador.RecibirDanio(jugador.Vida / 2);
+                }
+                break;
+        }
+    }
+
     
 } 
 catch 
 { 
 }
 
+
+
 //Apartado de Funciones
+static string ObtenerOpcion() {
+    while (true) {
+        try {
+            Console.WriteLine("Ingresa que quieres hacer: ");
+            string opcion = Console.ReadLine() ?? "".Trim();
+            if (opcion != "1" || opcion != "2" || opcion != "3") {
+                throw new ArgumentException("Opición invalida, debes ingresar 1, 2 o 3");
+            }
+            return opcion;
+        } catch (Exception ex) {
+            Console.WriteLine($"Error: {ex.Message}");
+        }
+    }
+}
 
 static Guerrero SeleccionarClase() {
     while (true) 
@@ -34,8 +82,24 @@ static Guerrero SeleccionarClase() {
             switch (opcion) { }
         } catch { }
     }
+    default:
+        throw new ArgumentException("Opcion invalida");
+
 }
 
+static Guerrero GenerarEnemigo() {
+    string[] nombres = { "Vikingo", "Orco", "Terminator", "Shrek", "Zeus" };
+    string nombre = nombres[new Random().Next(nombres.Length)];
+    return new Guerrero(nombre, new Random().Next(150, 200), new Random().Next(30, 50));
+}
+
+static void MostrarEstado(Guerrero jugador, Guerrero enemigo) {
+    Console.WriteLine($"Tu vida: {jugador.Vida} | Vida enemigo: {enemigo.Vida}");
+    Console.WriteLine("1- Atacar");
+    Console.WriteLine("2- Defender");
+    Console.WriteLine("3- Fusionarte con el enemigo");
+
+}
 
 //Definiciones de clases
 public class Guerrero 
