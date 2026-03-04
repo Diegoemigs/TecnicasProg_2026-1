@@ -12,6 +12,7 @@
     <Compile Remove="Calculadora.cs" />
     <Compile Remove="Class1.cs" />
     <Compile Remove="Dispositivo.cs" />
+    <Compile Remove="Juego.cs" />
     <Compile Remove="Persona.cs" />
     <Compile Remove="Program.cs" />
     <Compile Remove="Programaexce.cs" />
