@@ -11,7 +11,9 @@
     <Compile Remove="Auto.cs" />
     <Compile Remove="Calculadora.cs" />
     <Compile Remove="Class1.cs" />
+    <Compile Remove="Deportistas.cs" />
     <Compile Remove="Dispositivo.cs" />
+    <Compile Remove="Interfaces.cs" />
     <Compile Remove="Juego.cs" />
     <Compile Remove="Persona.cs" />
     <Compile Remove="Program.cs" />
