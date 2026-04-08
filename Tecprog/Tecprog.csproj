@@ -11,13 +11,20 @@
     <Compile Remove="Auto.cs" />
     <Compile Remove="Calculadora.cs" />
     <Compile Remove="Class1.cs" />
+    <Compile Remove="Class2.cs" />
     <Compile Remove="Deportistas.cs" />
     <Compile Remove="Dispositivo.cs" />
+    <Compile Remove="Examen.cs" />
     <Compile Remove="Interfaces.cs" />
     <Compile Remove="Juego.cs" />
     <Compile Remove="Persona.cs" />
     <Compile Remove="Program.cs" />
     <Compile Remove="Programaexce.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Class2.cs" />
+    <None Include="Examen.cs" />
   </ItemGroup>
 
 </Project>
